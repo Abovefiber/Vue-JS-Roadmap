@@ -1,13 +1,19 @@
 const app = Vue.createApp({
-    data(){
-        return {
-            name: 'Andrei Sibucao',
-            age: 21,
-            age_in_five: 21 + 5,
-            favoriteNumber: Math.random(0, 1),
-            image: 'drei.jpg'
-        };
+  data() {
+    return {
+      name: "Andrei Sibucao",
+      age: 21,
+      image: "drei.jpg",
+    };
+  },
+  methods: {
+    ageAddition() {
+      return this.age + 5;
+    },
+    calculateRandom(){
+        return Math.random();
     }
+  },
 });
 
-app.mount('#assignment');
+app.mount("#assignment");
