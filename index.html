@@ -19,25 +19,19 @@
     <section id="assignment">
       <h2>Event Practice</h2>
       <!-- 1) Show an alert (any text of your choice) when the button is pressed -->
-      <form v-on:submit.prevent="showAlert">
-        <button>Show Alert</button>
-      </form>
+      <button v-on:click="showAlert">Show Alert</button>
       <hr />
       <!-- 2) Register the user input on "keydown" and output it in the paragraph (hint: event.target.value helps) -->
-      <input
-        type="text"
-        v-on:input="inputText($event)"
-        v-on:keydown.down="inputDown"
-      />
-      <p>OUTPUT: {{ pressedDown }}</p>
+      <input type="text" v-on:keydown="saveInput" />
+      <p>{{ textName }}</p>
       <hr />
       <!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
       <input
         type="text"
-        v-on:input="inputText($event)"
-        v-on:keyup.enter="inputEnter"
+        v-on:keydown="saveInput"
+        v-on:keyup.enter="confirmInput"
       />
-      <p>OUTPUT: {{ pressedEnter }}</p>
+      <p>{{ pressedKey }}</p>
     </section>
   </body>
 </html>

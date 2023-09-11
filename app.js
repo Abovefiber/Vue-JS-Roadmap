@@ -2,20 +2,23 @@ const app = Vue.createApp({
   data() {
     return {
       textName: "",
-      pressedDown: "",
-      pressedEnter: "",
+      pressedKey: "",
     };
   },
   methods: {
-    inputDown(event) {
-      this.pressedDown = this.textName;
-    },
-    inputEnter(event) {
-      this.pressedEnter = this.textName;
-    },
-    inputText(event) {
+    saveInput(event) {
       this.textName = event.target.value;
     },
+
+    confirmInput() {
+      this.pressedKey = this.textName;
+    },
+    // inputText(event) {
+    //   this.textName = event.target.value;
+    // },
+    // inputEnter(event) {
+    //   this.pressedKey = this.textName;
+    // },
     showAlert() {
       alert("Submitted");
     },
